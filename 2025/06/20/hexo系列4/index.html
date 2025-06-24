@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="配置文件详解12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo系列4">
+<meta property="og:url" content="http://example.com/2025/06/20/hexo%E7%B3%BB%E5%88%974/index.html">
+<meta property="og:site_name" content="博客">
+<meta property="og:description" content="配置文件详解12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-06-20T02:27:13.000Z">
+<meta property="article:modified_time" content="2025-06-23T08:48:41.704Z">
+<meta property="article:author" content="lj&amp;&amp;tmy">
+<meta property="article:tag" content="-codeing -life">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2025/06/20/hexo%E7%B3%BB%E5%88%974/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>hexo系列4 | 博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">天道酬勤,厚德载物</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/20/hexo%E7%B3%BB%E5%88%974/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/tuxiang.jpg">
+      <meta itemprop="name" content="lj&&tmy">
+      <meta itemprop="description" content="总有人间一两风,填我十万八千梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          hexo系列4
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-06-20 10:27:13" itemprop="dateCreated datePublished" datetime="2025-06-20T10:27:13+08:00">2025-06-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-06-23 16:48:41" itemprop="dateModified" datetime="2025-06-23T16:48:41+08:00">2025-06-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="配置文件详解"><a href="#配置文件详解" class="headerlink" title="配置文件详解"></a>配置文件详解</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"># Hexo Configuration</span><br><span class="line">## Docs: https://hexo.io/docs/configuration.html</span><br><span class="line">## Source: https://github.com/hexojs/hexo/</span><br><span class="line"></span><br><span class="line"># Site</span><br><span class="line">title: 博客</span><br><span class="line">subtitle: 天道酬勤,厚德载物</span><br><span class="line">description: 总有人间一两风,填我十万八千梦</span><br><span class="line">keywords:</span><br><span class="line">  -codeing</span><br><span class="line">  -life</span><br><span class="line">author: lj&amp;&amp;tmy</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone: &#x27;&#x27;</span><br><span class="line"></span><br><span class="line"># URL</span><br><span class="line">## Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span><br><span class="line">url: http://example.com</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line">permalink_defaults:</span><br><span class="line">pretty_urls:</span><br><span class="line">  trailing_index: true # Set to false to remove trailing &#x27;index.html&#x27; from permalinks</span><br><span class="line">  trailing_html: true # Set to false to remove trailing &#x27;.html&#x27; from permalinks</span><br><span class="line"></span><br><span class="line"># Directory</span><br><span class="line">source_dir: source</span><br><span class="line">public_dir: public</span><br><span class="line">tag_dir: tags</span><br><span class="line">archive_dir: archives</span><br><span class="line">category_dir: categories</span><br><span class="line">code_dir: downloads/code</span><br><span class="line">i18n_dir: :lang</span><br><span class="line">skip_render:</span><br><span class="line"></span><br><span class="line"># Writing</span><br><span class="line">new_post_name: :title.md # File name of new posts</span><br><span class="line">default_layout: post</span><br><span class="line">titlecase: false # Transform title into titlecase</span><br><span class="line">external_link:</span><br><span class="line">  enable: true # Open external links in new tab</span><br><span class="line">  field: site # Apply to the whole site</span><br><span class="line">  exclude: &#x27;&#x27;</span><br><span class="line">filename_case: 0</span><br><span class="line">render_drafts: false</span><br><span class="line">post_asset_folder: true</span><br><span class="line">relative_link: false</span><br><span class="line">future: true</span><br><span class="line">syntax_highlighter: highlight.js</span><br><span class="line">highlight:</span><br><span class="line">  line_number: true</span><br><span class="line">  auto_detect: false</span><br><span class="line">  tab_replace: &#x27;&#x27;</span><br><span class="line">  wrap: true</span><br><span class="line">  hljs: false</span><br><span class="line">prismjs:</span><br><span class="line">  preprocess: true</span><br><span class="line">  line_number: true</span><br><span class="line">  tab_replace: &#x27;&#x27;</span><br><span class="line"></span><br><span class="line"># Home page setting</span><br><span class="line"># path: Root path for your blogs index page. (default = &#x27;&#x27;)</span><br><span class="line"># per_page: Posts displayed per page. (0 = disable pagination)</span><br><span class="line"># order_by: Posts order. (Order by date descending by default)</span><br><span class="line">index_generator:</span><br><span class="line">  path: &#x27;&#x27;</span><br><span class="line">  per_page: 10</span><br><span class="line">  order_by: -date</span><br><span class="line"></span><br><span class="line"># Category &amp; Tag</span><br><span class="line">default_category: uncategorized</span><br><span class="line">category_map:</span><br><span class="line">tag_map:</span><br><span class="line"></span><br><span class="line"># Metadata elements</span><br><span class="line">## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta</span><br><span class="line">meta_generator: true</span><br><span class="line"></span><br><span class="line"># Date / Time format</span><br><span class="line">## Hexo uses Moment.js to parse and display date</span><br><span class="line">## You can customize the date format as defined in</span><br><span class="line">## http://momentjs.com/docs/#/displaying/format/</span><br><span class="line">date_format: YYYY-MM-DD</span><br><span class="line">time_format: HH:mm:ss</span><br><span class="line">## updated_option supports &#x27;mtime&#x27;, &#x27;date&#x27;, &#x27;empty&#x27;</span><br><span class="line">updated_option: &#x27;mtime&#x27;</span><br><span class="line"></span><br><span class="line"># Pagination</span><br><span class="line">## Set per_page to 0 to disable pagination</span><br><span class="line">per_page: 10</span><br><span class="line">pagination_dir: page</span><br><span class="line"></span><br><span class="line"># Include / Exclude file(s)</span><br><span class="line">## include:/exclude: options only apply to the &#x27;source/&#x27; folder</span><br><span class="line">include:</span><br><span class="line">exclude:</span><br><span class="line">ignore:</span><br><span class="line"></span><br><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: next</span><br><span class="line"></span><br><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/one-command-deployment</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:ljtmy/ljtmy.github.io.git</span><br><span class="line">  branch: main </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-site"><a href="#1-site" class="headerlink" title="1.site"></a>1.site</h3><p>网站的个性化描述</p>
+<table>
+<thead>
+<tr>
+<th align="center">setting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">title</td>
+<td align="center">网站标题</td>
+</tr>
+<tr>
+<td align="center">subtitle</td>
+<td align="center">网站副标题</td>
+</tr>
+<tr>
+<td align="center">description</td>
+<td align="center">网站描述</td>
+</tr>
+<tr>
+<td align="center">keywords</td>
+<td align="center">网站关键词</td>
+</tr>
+<tr>
+<td align="center">author</td>
+<td align="center">网站作者</td>
+</tr>
+<tr>
+<td align="center">language</td>
+<td align="center">网站使用的语言，默认是<code>en</code> ，中文网站填<code>zh-Hans</code></td>
+</tr>
+<tr>
+<td align="center">timezone</td>
+<td align="center">网站使用的时区，默认为 <code>计算机的预设置</code>，可以不填</td>
+</tr>
+</tbody></table>
+<h3 id="2-url"><a href="#2-url" class="headerlink" title="2.url"></a>2.url</h3><p>关于博客文章 URL 的设置，一般不用进行更改</p>
+<table>
+<thead>
+<tr>
+<th align="center">setting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">url</td>
+<td align="center">网站的网站</td>
+</tr>
+<tr>
+<td align="center">permalink</td>
+<td align="center">文章的链接格式 ，默认为 <code>:year/:month/:day/:title/</code></td>
+</tr>
+<tr>
+<td align="center">pretty_urls</td>
+<td align="center"><strong><code>trailing_index</code></strong>：设置为 <code>true</code>，表示在永久链接的末尾保留 <code>index.html</code>。如果设置为 <code>false</code>，则会移除 <code>index.html</code>，使 URL 更简洁。 <strong><code>trailing_html</code></strong>：设置为 <code>true</code>，表示在永久链接的末尾保留 <code>.html</code>。如果设置为 <code>false</code>，则会移除 <code>.html</code>，使 URL 更简洁。</td>
+</tr>
+</tbody></table>
+<h3 id="3-Directory"><a href="#3-Directory" class="headerlink" title="3.Directory"></a>3.Directory</h3><p>关于文件夹的设置，也是一般不用进行更改</p>
+<table>
+<thead>
+<tr>
+<th align="center">setting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">source_dir</td>
+<td align="center">资源文件夹 ，存放用户的资源文件，默认为 <code>source</code></td>
+</tr>
+<tr>
+<td align="center">public_dir</td>
+<td align="center">公用文件夹 ，存放生成的静态文件，默认为 <code>public</code></td>
+</tr>
+<tr>
+<td align="center">tag_dir</td>
+<td align="center">标签目录 ，默认为 <code>tags</code></td>
+</tr>
+<tr>
+<td align="center">archive_dir</td>
+<td align="center">档案目录 ，默认为 <code>archives</code></td>
+</tr>
+<tr>
+<td align="center">category_dir</td>
+<td align="center">分类目录 ，默认为 <code>categories</code></td>
+</tr>
+<tr>
+<td align="center">code_dir</td>
+<td align="center">代码目录 ，默认为 <code>downloads/code</code></td>
+</tr>
+<tr>
+<td align="center">i18n_dir</td>
+<td align="center">i18n目录 ，默认为 <code>:lang</code></td>
+</tr>
+<tr>
+<td align="center">skip_render</td>
+<td align="center">储存站长验证文件，跳过指定文件的渲染</td>
+</tr>
+</tbody></table>
+<h3 id="4-Writing"><a href="#4-Writing" class="headerlink" title="4.Writing"></a>4.Writing</h3><p>这里是比较常用的写作设置，可以根据自己的写作习惯随时进行调整</p>
+<table>
+<thead>
+<tr>
+<th align="center">setting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">new_post_name</td>
+<td align="center">新文章的文件名格式，默认为 <code>:title.md</code></td>
+</tr>
+<tr>
+<td align="center">default_layout</td>
+<td align="center">预设的布局模板，默认为 <code>post</code></td>
+</tr>
+<tr>
+<td align="center">titlecase</td>
+<td align="center">标题是否使用首字母大写 ，默认为 <code>false</code></td>
+</tr>
+<tr>
+<td align="center">external_link</td>
+<td align="center"><strong><code>enable</code></strong>：<code>true</code> ， 是否在新标签页中打开外部链接。设置为 <code>true</code> 可以提高用户体验，避免用户离开当前页面。   <strong><code>field</code></strong>：<code>site</code>，  应用范围。<code>site</code> 表示应用于整个站点。 <strong><code>exclude</code></strong>：<code>&#39;&#39;</code>，  排除的域名。如果某些外部链接不需要在新标签页中打开，可以在这里列出这些域名。</td>
+</tr>
+<tr>
+<td align="center">filename_case</td>
+<td align="center">将文件名转换为 <code>1</code> 小写 或 <code>2</code> 大写，默认为 <code>0</code></td>
+</tr>
+<tr>
+<td align="center">render_drafts</td>
+<td align="center">是否显示渲染草稿，默认为 <code>false</code></td>
+</tr>
+<tr>
+<td align="center">post_asset_folder</td>
+<td align="center">是否启用文章资源文件夹。设置为 <code>true</code> 表示每篇文章都会有一个对应的资源文件夹，方便管理文章中的图片、文件等资源。</td>
+</tr>
+<tr>
+<td align="center">relative_link</td>
+<td align="center">是否使用相对链接。设置为 <code>false</code> 表示不使用相对链接，链接将基于站点的根目录。</td>
+</tr>
+<tr>
+<td align="center">future</td>
+<td align="center">是否显示未来日期的文章。设置为 <code>true</code> 表示允许显示发布日期在未来的文章。</td>
+</tr>
+<tr>
+<td align="center">syntax_highlighter</td>
+<td align="center">代码高亮工具。<code>highlight.js</code> 是一个流行的代码高亮库，支持多种编程语言</td>
+</tr>
+<tr>
+<td align="center">highlight</td>
+<td align="center"><strong><code>line_number</code></strong>：<code>true</code>，是否显示代码行号。设置为 <code>true</code> 可以在代码块中显示行号，便于阅读和调试。 <strong><code>auto_detect</code></strong>：<code>false</code>  ，是否自动检测代码语言。设置为 <code>false</code> 表示不自动检测，需要手动指定代码语言。 <strong><code>tab_replace</code></strong>：<code>&#39;&#39;</code>  ，替换制表符的字符。默认为空，表示不进行替换。 <strong><code>wrap</code></strong>：<code>true</code>  ，是否对代码块进行包裹。设置为 <code>true</code> 可以使代码块在页面中更好地显示。 <strong><code>hljs</code></strong>：<code>false</code> ，是否使用 <code>highlight.js</code> 的高级功能。设置为 <code>false</code> 表示不使用。</td>
+</tr>
+<tr>
+<td align="center">prismjs</td>
+<td align="center"><strong><code>preprocess</code></strong>：<code>true</code>  ，是否预处理代码块。设置为 <code>true</code> 可以提高代码高亮的性能。 <strong><code>line_number</code></strong>：<code>true</code>  ，：是否显示代码行号。设置为 <code>true</code> 可以在代码块中显示行号。 <strong><code>tab_replace</code></strong>：<code>&#39;&#39;</code>  ，：替换制表符的字符。默认为空，表示不进行替换。</td>
+</tr>
+</tbody></table>
+<h3 id="5-Home-page-setting"><a href="#5-Home-page-setting" class="headerlink" title="5.Home page setting"></a>5.Home page setting</h3><p>首页设置，可以自己决定每页显示的文章数量和显示文章的顺序，<strong>index_generator——主页设置</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">setting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">path</td>
+<td align="center"><strong>默认值：</strong>‘’。首页的根路径。默认值为空字符串，表示首页路径为网站的根目录。如果您希望将首页放在一个特定的子目录中，可以在这里指定路径，例如 <code>home</code>，则首页的路径将是 <code>https://yourdomain.com/home</code>。</td>
+</tr>
+<tr>
+<td align="center">per_page</td>
+<td align="center"><strong>默认值：</strong><code>10</code>。每页显示的文章数量。设置为 <code>10</code> 表示每页显示 10 篇文章。如果您希望禁用分页，可以将此值设置为 <code>0</code>。</td>
+</tr>
+<tr>
+<td align="center">order_by</td>
+<td align="center"><strong>默认值</strong>：<code>-date</code> 。文章的排序方式。默认值为 <code>-date</code>，表示按日期降序排列（最新的文章在前）。如果您希望按日期升序排列（最旧的文章在前），可以将其设置为 <code>date</code>。您还可以使用其他字段进行排序，例如 <code>updated</code> 或 <code>title</code>。</td>
+</tr>
+</tbody></table>
+<h3 id="6-Category-Tag"><a href="#6-Category-Tag" class="headerlink" title="6.Category &amp; Tag"></a>6.Category &amp; Tag</h3><p>这里是关于分类和标签的配置</p>
+<table>
+<thead>
+<tr>
+<th align="center">setting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">default_category</td>
+<td align="center">预设分类，默认为 <code>uncategorized</code></td>
+</tr>
+<tr>
+<td align="center">category_map</td>
+<td align="center">分类别名</td>
+</tr>
+<tr>
+<td align="center">tag_map</td>
+<td align="center">标签别名</td>
+</tr>
+</tbody></table>
+<h3 id="7-meta-generator"><a href="#7-meta-generator" class="headerlink" title="7.meta_generator"></a>7.meta_generator</h3><p><code>meta_generator</code> 是一个用于控制是否在生成的 HTML 文件中包含 <code>&lt;meta&gt;</code> 元素的设置。</p>
+<table>
+<thead>
+<tr>
+<th align="center">seeting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">meta_generator</td>
+<td align="center"><strong>默认值：</strong><code>true</code> ，当设置为 <code>true</code> 时，Hexo 会在生成的 HTML 文件的 <code>&lt;head&gt;</code> 部分添加一个 <code>&lt;meta name=&quot;generator&quot; content=&quot;Hexo&quot;&gt;</code> 标签。这个标签表明网站是使用 Hexo 生成的。如果您希望隐藏这个信息，可以将其设置为 <code>false</code>。</td>
+</tr>
+</tbody></table>
+<h3 id="8-Date-Time-format"><a href="#8-Date-Time-format" class="headerlink" title="8.Date &#x2F; Time format"></a>8.Date &#x2F; Time format</h3><p>时间和日期的显示格式，一般没特殊要求的也不需要改</p>
+<table>
+<thead>
+<tr>
+<th align="center">setting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">date_format</td>
+<td align="center">日期格式，默认为 <code>YYYY-MM-DD</code></td>
+</tr>
+<tr>
+<td align="center">time_format</td>
+<td align="center">时间格式，默认为 <code>HH:mm:ss</code></td>
+</tr>
+</tbody></table>
+<h4 id="9-Pagination"><a href="#9-Pagination" class="headerlink" title="9.Pagination"></a>9.Pagination</h4><p>这里是分页设置，可以自己决定单个页面上显示的文章数量和分页目录</p>
+<table>
+<thead>
+<tr>
+<th align="center">setting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">per_page</td>
+<td align="center">单个页面上显示的文章数量，默认为 <code>10</code> ，用 <code>0</code> 表示禁用分页</td>
+</tr>
+<tr>
+<td align="center">pagination_dir</td>
+<td align="center">分页目录，默认为 <code>page</code></td>
+</tr>
+</tbody></table>
+<h3 id="10-Include-Exclude-file-s"><a href="#10-Include-Exclude-file-s" class="headerlink" title="10.Include &#x2F; Exclude file(s)"></a>10.Include &#x2F; Exclude file(s)</h3><p><code>include</code>、<code>exclude</code> 和 <code>ignore</code> 是用于控制哪些文件和文件夹应该被包含或排除在生成的静态文件之外的设置。</p>
+<table>
+<thead>
+<tr>
+<th align="center">setting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">include</td>
+<td align="center">指定哪些文件或文件夹应该被包含在生成的静态文件中。这通常用于包含一些默认情况下会被 Hexo 忽略的文件，例如隐藏文件（以 <code>.</code> 开头的文件）或特定的文件类型。<strong>默认值</strong>：空数组 <code>[]</code></td>
+</tr>
+<tr>
+<td align="center">exclude</td>
+<td align="center">指定哪些文件或文件夹应该被排除在生成的静态文件之外。这通常用于排除一些不需要生成的文件，例如临时文件、备份文件或特定的文件类型。<strong>默认值</strong>：空数组 <code>[]</code></td>
+</tr>
+<tr>
+<td align="center">ignore</td>
+<td align="center">指定哪些文件或文件夹应该被完全忽略，既不会被渲染也不会被复制到 <code>public/</code> 文件夹中。这通常用于排除一些不需要处理的文件，例如临时文件、配置文件等。<strong>默认值</strong>：空数组 <code>[]</code></td>
+</tr>
+</tbody></table>
+<h3 id="11Extensions"><a href="#11Extensions" class="headerlink" title="11Extensions"></a>11Extensions</h3><p>这里可以设置主题类型和插件</p>
+<table>
+<thead>
+<tr>
+<th align="center">setting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">theme</td>
+<td align="center">博客使用的主题，默认为 <code>landscape</code></td>
+</tr>
+</tbody></table>
+<h4 id="12-Deployment"><a href="#12-Deployment" class="headerlink" title="12.Deployment"></a>12.Deployment</h4><p>这里是关于网站部署的配置，常用的有部署类型和部署地址</p>
+<table>
+<thead>
+<tr>
+<th align="center">setting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">type</td>
+<td align="center">网站部署类型</td>
+</tr>
+<tr>
+<td align="center">repo</td>
+<td align="center">网站部署地址</td>
+</tr>
+<tr>
+<td align="center">branch</td>
+<td align="center">目标分支的名称</td>
+</tr>
+</tbody></table>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/06/20/hexo%E7%B3%BB%E5%88%973/" rel="prev" title="hexo系列3">
+      <i class="fa fa-chevron-left"></i> hexo系列3
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2025/06/20/%E5%8F%98%E9%87%8F%E4%B8%8E%E6%B3%A8%E9%87%8A/" rel="next" title="变量与注释">
+      变量与注释 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">配置文件详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-site"><span class="nav-number">1.1.</span> <span class="nav-text">1.site</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-url"><span class="nav-number">1.2.</span> <span class="nav-text">2.url</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Directory"><span class="nav-number">1.3.</span> <span class="nav-text">3.Directory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Writing"><span class="nav-number">1.4.</span> <span class="nav-text">4.Writing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Home-page-setting"><span class="nav-number">1.5.</span> <span class="nav-text">5.Home page setting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Category-Tag"><span class="nav-number">1.6.</span> <span class="nav-text">6.Category &amp; Tag</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-meta-generator"><span class="nav-number">1.7.</span> <span class="nav-text">7.meta_generator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-Date-Time-format"><span class="nav-number">1.8.</span> <span class="nav-text">8.Date &#x2F; Time format</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#9-Pagination"><span class="nav-number">1.8.1.</span> <span class="nav-text">9.Pagination</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-Include-Exclude-file-s"><span class="nav-number">1.9.</span> <span class="nav-text">10.Include &#x2F; Exclude file(s)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11Extensions"><span class="nav-number">1.10.</span> <span class="nav-text">11Extensions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#12-Deployment"><span class="nav-number">1.10.1.</span> <span class="nav-text">12.Deployment</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="lj&&tmy"
+      src="/image/tuxiang.jpg">
+  <p class="site-author-name" itemprop="name">lj&&tmy</p>
+  <div class="site-description" itemprop="description">总有人间一两风,填我十万八千梦</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lj&&tmy</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
