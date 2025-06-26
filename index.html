@@ -149,6 +149,126 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/26/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/tuxiang.jpg">
+      <meta itemprop="name" content="lj&&tmy">
+      <meta itemprop="description" content="总有人间一两风,填我十万八千梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/06/26/%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="post-title-link" itemprop="url">字符串</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-06-26 16:28:42 / 修改时间：17:38:17" itemprop="dateCreated datePublished" datetime="2025-06-26T16:28:42+08:00">2025-06-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>字符串 就是一系列字符。在Python中，用引号括起的都是字符串，其中的引号可以是单引号，也可以是双引号</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;This is a string.&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;This is also a string.&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="1-使用方法修改字符串大小写"><a href="#1-使用方法修改字符串大小写" class="headerlink" title="1.使用方法修改字符串大小写"></a>1.使用方法修改字符串大小写</h2><h3 id="1-1-title-方法"><a href="#1-1-title-方法" class="headerlink" title="1.1 title()方法"></a>1.1 title()方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;ada lovelace&quot;</span></span><br><span class="line"><span class="built_in">print</span>(name.title())</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ada Lovelace</span><br></pre></td></tr></table></figure>
+
+<p>title()方法会将字符串每个单词的首字母变为大写，其他字母变为小写</p>
+<h3 id="1-2-upper-方法和lower-方法"><a href="#1-2-upper-方法和lower-方法" class="headerlink" title="1.2 upper()方法和lower()方法"></a>1.2 upper()方法和lower()方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;ada lovelace&quot;</span></span><br><span class="line"><span class="built_in">print</span>(name.upper())</span><br><span class="line"><span class="built_in">print</span>(name.lower())</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ADA LOVELACE</span><br><span class="line">ada lovelace</span><br></pre></td></tr></table></figure>
+
+<p>upper()方法将字母全部变为大写，lower()方法将字母全变为小写</p>
+<h2 id="2-拼接字符串"><a href="#2-拼接字符串" class="headerlink" title="2.拼接字符串"></a>2.拼接字符串</h2><h3 id="2-1-方法"><a href="#2-1-方法" class="headerlink" title="2.1 +方法"></a>2.1 <code>+</code>方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">first_name = <span class="string">&quot;ada&quot;</span></span><br><span class="line">last_name = <span class="string">&quot;lovelace&quot;</span> </span><br><span class="line">full_name = first_name + <span class="string">&quot; &quot;</span> + last_name</span><br><span class="line"><span class="built_in">print</span>(full_name)</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ada lovelace</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：<code>+</code>不能拼接字符串和其他类型(可以使用数据类型转换)</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">age = <span class="number">18</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;年龄：&quot;</span> + age)  <span class="comment"># 会报错：TypeError</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-使用格式化（f-string）"><a href="#2-2-使用格式化（f-string）" class="headerlink" title="2.2 使用格式化（f-string）"></a>2.2 使用格式化（f-string）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;小明&quot;</span></span><br><span class="line">msg = <span class="string">f&quot;你好，<span class="subst">&#123;name&#125;</span>！&quot;</span></span><br><span class="line"><span class="built_in">print</span>(msg)  <span class="comment"># 输出：你好，小明！</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3使用join-方法（列表）"><a href="#2-3使用join-方法（列表）" class="headerlink" title="2.3使用join() 方法（列表）"></a>2.3使用join() 方法（列表）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">words = [<span class="string">&quot;Python&quot;</span>, <span class="string">&quot;很&quot;</span>, <span class="string">&quot;有趣&quot;</span>]</span><br><span class="line">sentence = <span class="string">&quot;&quot;</span>.join(words)</span><br><span class="line"><span class="built_in">print</span>(sentence)  <span class="comment"># 输出：Python很有趣</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-删除空白"><a href="#3-删除空白" class="headerlink" title="3.删除空白"></a>3.删除空白</h2><p>空白很重要，因为你经常需要比较两个字符串是否相同。</p>
+<p>Python能够找出字符串开头和末尾多余的空白。</p>
+<table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">rstrip()</td>
+<td align="center">剔除字符串末尾空白</td>
+</tr>
+<tr>
+<td align="center">lstrip()</td>
+<td align="center">剔除字符串开头空白</td>
+</tr>
+<tr>
+<td align="center">strip()</td>
+<td align="center">剔除字符串两端空白</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&quot;   hello world   &quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(s.rstrip())  <span class="comment"># 剔除末尾空白，输出：&quot;   hello world&quot;</span></span><br><span class="line"><span class="built_in">print</span>(s.lstrip())  <span class="comment"># 剔除开头空白，输出：&quot;hello world   &quot;</span></span><br><span class="line"><span class="built_in">print</span>(s.strip())   <span class="comment"># 剔除两端空白，输出：&quot;hello world&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/24/%E8%BE%93%E5%85%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1338,7 +1458,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
