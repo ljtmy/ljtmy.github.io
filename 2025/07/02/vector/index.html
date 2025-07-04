@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="vectorvector为可变长数组(动态数组)，定义的vector数组可以随时添加数值和删除元素。 注意：在局部区域中（比如局部函数里面）开vector数组，是在堆空间里面开的。 在局部区域开数组是在栈空间开的，而栈空间比较小，如果开了非常长的数组就会发生爆栈。 故局部区域不可以开大长度数组，但是可以开大长度vector。 1.vector初始化包含头文件： 12#include &lt;vec">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vector">
+<meta property="og:url" content="http://example.com/2025/07/02/vector/index.html">
+<meta property="og:site_name" content="博客">
+<meta property="og:description" content="vectorvector为可变长数组(动态数组)，定义的vector数组可以随时添加数值和删除元素。 注意：在局部区域中（比如局部函数里面）开vector数组，是在堆空间里面开的。 在局部区域开数组是在栈空间开的，而栈空间比较小，如果开了非常长的数组就会发生爆栈。 故局部区域不可以开大长度数组，但是可以开大长度vector。 1.vector初始化包含头文件： 12#include &lt;vec">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-07-02T07:48:12.000Z">
+<meta property="article:modified_time" content="2025-07-03T02:38:18.730Z">
+<meta property="article:author" content="lj&amp;&amp;tmy">
+<meta property="article:tag" content="coding">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2025/07/02/vector/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>vector | 博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">天道酬勤,厚德载物</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/07/02/vector/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/tuxiang.jpg">
+      <meta itemprop="name" content="lj&&tmy">
+      <meta itemprop="description" content="总有人间一两风,填我十万八千梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          vector
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-07-02 15:48:12" itemprop="dateCreated datePublished" datetime="2025-07-02T15:48:12+08:00">2025-07-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-07-03 10:38:18" itemprop="dateModified" datetime="2025-07-03T10:38:18+08:00">2025-07-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/STL/" itemprop="url" rel="index"><span itemprop="name">STL</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h1><p><code>vector</code>为可变长数组(动态数组)，定义的<code>vector</code>数组可以随时添加数值和删除元素。</p>
+<p>注意：<strong>在局部区域中（比如局部函数里面）开vector数组，是在堆空间里面开的。</strong></p>
+<p>在局部区域开数组是在栈空间开的，而栈空间比较小，如果开了非常长的数组就会发生爆栈。</p>
+<p>故局部区域<strong>不可以</strong>开大长度数组，但是可以开大长度<code>vector</code>。</p>
+<h2 id="1-vector初始化"><a href="#1-vector初始化" class="headerlink" title="1.vector初始化"></a>1.vector初始化</h2><p>包含头文件：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-1一维初始化"><a href="#1-1一维初始化" class="headerlink" title="1.1一维初始化"></a>1.1一维初始化</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; a; <span class="comment">//定义了一个名为a的一维数组,数组存储int类型数据</span></span><br><span class="line">vector&lt;<span class="type">double</span>&gt; b; <span class="comment">//定义了一个名为b的一维数组，数组存储double类型数据</span></span><br><span class="line">vector&lt;node&gt; c; <span class="comment">//定义了一个名为c的一维数组，数组存储结构体类型数据，node是结构体类型</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>指定<strong>长度</strong>和<strong>初始值</strong>的初始化</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">v</span><span class="params">(n)</span></span>; <span class="comment">// 定义一个长度为n的数组，初始值默认为0，下标范围[0, n - 1]</span></span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">v</span><span class="params">(n, <span class="number">1</span>)</span></span>; <span class="comment">// v[0] 到 v[n - 1]所有的元素初始值均为1</span></span><br><span class="line"><span class="comment">//注意：指定数组长度之后（指定长度后的数组就相当于正常的数组了）</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>初始化中有多个元素</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; a&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;<span class="comment">//数组a中有五个元素，数组长度就为5</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>拷贝初始化</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">a</span><span class="params">(n + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">b</span><span class="params">(a)</span></span>; <span class="comment">// 两个数组中的类型必须相同,a和b都是长度为n+1，初始值都为0的数组</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt; c = a; <span class="comment">// 也是拷贝初始化,c和a是完全一样的数组</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2二维初始化"><a href="#1-2二维初始化" class="headerlink" title="1.2二维初始化"></a>1.2二维初始化</h3><p>定义第一维固定长度为<code>5</code>，第二维可变化的二维数组</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; v[<span class="number">5</span>];<span class="comment">//定义可变长二维数组</span></span><br><span class="line"><span class="comment">//注意：行不可变（只有5行）, 而列可变,可以在指定行添加元素</span></span><br><span class="line"><span class="comment">//第一维固定长度为5，第二维长度可以改变</span></span><br><span class="line"><span class="comment">//包含5个元素的数组，元素类型为vector&lt;int&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>vector&lt;int&gt; v[5]</code>可以这样理解：长度为5的v数组，数组中存储的是<code>vector&lt;int&gt; </code>数据类型，而该类型就是数组形式，故<code>v</code>为二维数组。其中每个数组元素均为空，因为没有指定长度，所以第二维可变长。可以进行下述操作：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">v[<span class="number">1</span>].<span class="built_in">push_back</span>(<span class="number">2</span>);</span><br><span class="line">v[<span class="number">2</span>].<span class="built_in">push_back</span>(<span class="number">3</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 1. 创建3行4列，所有元素初始化为0</span></span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">mat1</span>(<span class="number">3</span>, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(<span class="number">4</span>, <span class="number">0</span>));</span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 2. 用列表初始化</span></span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; mat2 = &#123;</span><br><span class="line">        &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;,</span><br><span class="line">        &#123;<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;,</span><br><span class="line">        &#123;<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>&#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 3. 动态添加行</span></span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; mat3;</span><br><span class="line">    mat<span class="number">3.</span><span class="built_in">push_back</span>(&#123;<span class="number">1</span>, <span class="number">2</span>&#125;);</span><br><span class="line">    mat<span class="number">3.</span><span class="built_in">push_back</span>(&#123;<span class="number">3</span>, <span class="number">4</span>&#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-函数总结"><a href="#2-函数总结" class="headerlink" title="2.函数总结"></a>2.函数总结</h2><p><strong>c指定为数组名称</strong>，含义中会注明算法复杂度。</p>
+<table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">复杂度</th>
+<th align="center">返回值类型</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">c.front()</td>
+<td align="center"><em>O(1)</em></td>
+<td align="center">引用</td>
+<td align="center">返回容器中的第一个数据</td>
+</tr>
+<tr>
+<td align="center">c.back()</td>
+<td align="center"><em>O(1)</em></td>
+<td align="center">引用</td>
+<td align="center">返回容器中的最后一个数据</td>
+</tr>
+<tr>
+<td align="center">c.at(idx)</td>
+<td align="center"></td>
+<td align="center">引用</td>
+<td align="center">返回 <code>c[idx]</code> ，会进行边界检查，如果越界会报错，比直接使用 <code>[]</code> 更好一些，常在项目中使用</td>
+</tr>
+<tr>
+<td align="center">c.size()</td>
+<td align="center"><em>O(1)</em></td>
+<td align="center"></td>
+<td align="center">返回实际数据个数（unsigned类型）</td>
+</tr>
+<tr>
+<td align="center">c.begin()</td>
+<td align="center"><em>O(1)</em></td>
+<td align="center">迭代器</td>
+<td align="center">返回首元素的迭代器（通俗来说就是地址）</td>
+</tr>
+<tr>
+<td align="center">c.end()</td>
+<td align="center"><em>O(1)</em></td>
+<td align="center">迭代器</td>
+<td align="center">返回最后一个元素后一个位置的迭代器（地址）</td>
+</tr>
+<tr>
+<td align="center">c.empty()</td>
+<td align="center"><em>O(1)</em></td>
+<td align="center">bool</td>
+<td align="center">判断是否为空，为空返回真，反之返回假</td>
+</tr>
+<tr>
+<td align="center">c.reserve(sz)</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">为数组提前分配<code>sz</code>的内存大小，即改变了 <code>capacity</code> 的大小，主要是为了防止在 <code>push_back</code> 过程中多次的内存拷贝</td>
+</tr>
+<tr>
+<td align="center">c.assign(beg, end)</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">将另外一个容器<code>[x.begin(), x.end())</code> 里的内容拷贝到<code>c</code>中</td>
+</tr>
+<tr>
+<td align="center">c.assign(n, val)</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">将<code>n</code> 个<code>val</code>值拷贝到<code>c</code>数组中，这会清除掉容器中以前的内容，<code>c</code>数组的<code>size</code>将变为<code>n</code>，<code>capacity</code> 不会改变</td>
+</tr>
+<tr>
+<td align="center">c.pop_back()</td>
+<td align="center"><em>O(1)</em></td>
+<td align="center"></td>
+<td align="center">删除最后一个数据</td>
+</tr>
+<tr>
+<td align="center">c.push_back(element)</td>
+<td align="center"><em>O(1)</em></td>
+<td align="center"></td>
+<td align="center">在尾部加一个数据</td>
+</tr>
+<tr>
+<td align="center">c.emplace_back(ele)</td>
+<td align="center"><em>O(1)</em></td>
+<td align="center"></td>
+<td align="center">在数组中加入一个数据，和 <code>push_back</code> 功能基本一样，在某些情况下比它效率更高，支持传入多个构造参数</td>
+</tr>
+<tr>
+<td align="center">c.clear()</td>
+<td align="center"><em>O(N)</em></td>
+<td align="center"></td>
+<td align="center">清除容器中的所有元素</td>
+</tr>
+<tr>
+<td align="center">c.resize(n, v)</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">c.insert(pos, x)</td>
+<td align="center"><em>O(N)</em></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">c.insert(c.begin() + 2, -1)</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">将<code>-1</code>插入<code>c[2]</code>的位置</td>
+</tr>
+<tr>
+<td align="center">c.erase(first, last)</td>
+<td align="center"><em>O(N)</em></td>
+<td align="center"></td>
+<td align="center">删除<code>[first, last)</code>的所有元素</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; v;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 添加元素</span></span><br><span class="line">    v.<span class="built_in">push_back</span>(<span class="number">10</span>);</span><br><span class="line">    v.<span class="built_in">push_back</span>(<span class="number">20</span>);</span><br><span class="line">    v.<span class="built_in">emplace_back</span>(<span class="number">30</span>); <span class="comment">// 效果同 push_back</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 访问元素</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;第一个元素: &quot;</span> &lt;&lt; v.<span class="built_in">front</span>() &lt;&lt; endl; <span class="comment">// 10</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;最后一个元素: &quot;</span> &lt;&lt; v.<span class="built_in">back</span>() &lt;&lt; endl; <span class="comment">// 30</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;第二个元素: &quot;</span> &lt;&lt; v.<span class="built_in">at</span>(<span class="number">1</span>) &lt;&lt; endl; <span class="comment">// 20</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 遍历</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;遍历所有元素: &quot;</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">size_t</span> i = <span class="number">0</span>; i &lt; v.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">        cout &lt;&lt; v[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 插入和删除</span></span><br><span class="line">    v.<span class="built_in">insert</span>(v.<span class="built_in">begin</span>() + <span class="number">1</span>, <span class="number">15</span>); <span class="comment">// 在第二个位置插入15</span></span><br><span class="line">    v.<span class="built_in">erase</span>(v.<span class="built_in">begin</span>() + <span class="number">2</span>);      <span class="comment">// 删除第三个元素</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 判断是否为空</span></span><br><span class="line">    <span class="keyword">if</span> (!v.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;vector不为空，元素个数: &quot;</span> &lt;&lt; v.<span class="built_in">size</span>() &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 清空</span></span><br><span class="line">    v.<span class="built_in">clear</span>();</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;清空后，是否为空: &quot;</span> &lt;&lt; (v.<span class="built_in">empty</span>() ? <span class="string">&quot;是&quot;</span> : <span class="string">&quot;否&quot;</span>) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/coding/" rel="tag"># coding</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/07/02/%E5%BC%95%E7%94%A8/" rel="prev" title="引用">
+      <i class="fa fa-chevron-left"></i> 引用
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2025/07/04/740-%E5%88%A0%E9%99%A4%E5%B9%B6%E8%8E%B7%E5%BE%97%E7%82%B9%E6%95%B0/" rel="next" title="740. 删除并获得点数">
+      740. 删除并获得点数 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vector"><span class="nav-number">1.</span> <span class="nav-text">vector</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-vector%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.1.</span> <span class="nav-text">1.vector初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E4%B8%80%E7%BB%B4%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1一维初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E4%BA%8C%E7%BB%B4%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2二维初始化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93"><span class="nav-number">1.2.</span> <span class="nav-text">2.函数总结</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="lj&&tmy"
+      src="/image/tuxiang.jpg">
+  <p class="site-author-name" itemprop="name">lj&&tmy</p>
+  <div class="site-description" itemprop="description">总有人间一两风,填我十万八千梦</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lj&&tmy</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -149,6 +149,1349 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/27/%E5%85%83%E7%BB%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/tuxiang.jpg">
+      <meta itemprop="name" content="lj&&tmy">
+      <meta itemprop="description" content="总有人间一两风,填我十万八千梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/06/27/%E5%85%83%E7%BB%84/" class="post-title-link" itemprop="url">元组</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-06-27 13:48:25 / 修改时间：14:08:35" itemprop="dateCreated datePublished" datetime="2025-06-27T13:48:25+08:00">2025-06-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h1><p><strong>一个元组可以存储多个数据，元组内的数据是不能修改的。</strong></p>
+<h2 id="1-定义元组"><a href="#1-定义元组" class="headerlink" title="1. 定义元组"></a>1. 定义元组</h2><p>元组特点：定义元组使用小括号，且逗号隔开各个数据，数据可以是不同的数据类型.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 多个数据元组</span></span><br><span class="line">t1 = (<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 单个数据元组</span></span><br><span class="line">t2 = (<span class="number">10</span>,)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：如果定义的元组只有一个数据，那么这个数据后面也好添加逗号，否则数据类型为唯一的这个数据的数据类型</strong>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">t2 = (<span class="number">10</span>,)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(t2))  <span class="comment"># tuple</span></span><br><span class="line"></span><br><span class="line">t3 = (<span class="number">20</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(t3))  <span class="comment"># int</span></span><br><span class="line"></span><br><span class="line">t4 = (<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(t4))  <span class="comment"># str</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-元组的常见操作"><a href="#2-元组的常见操作" class="headerlink" title="2. 元组的常见操作"></a>2. 元组的常见操作</h2><p>元组数据不支持修改，只支持查找</p>
+<ul>
+<li><p>按照下标查找</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tuple1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(tuple1[<span class="number">0</span>])  <span class="comment"># aa</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">index()</td>
+<td align="center">查找某个数据，如果数据存在返回对应的下标，否则报错，语法和列表、字符串的index方法相同。</td>
+</tr>
+<tr>
+<td align="center">count()</td>
+<td align="center">统计某个数据在元组中出现的次数</td>
+</tr>
+<tr>
+<td align="center">len()</td>
+<td align="center">返回元组中数据的个数</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">tuple1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(tuple1.index(<span class="string">&#x27;aa&#x27;</span>))  <span class="comment">#输出： 0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(tuple1.count(<span class="string">&#x27;bb&#x27;</span>))  <span class="comment">#输出： 2</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(tuple1))  <span class="comment">#输出： 4</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-元组中的注意事项"><a href="#3-元组中的注意事项" class="headerlink" title="3.元组中的注意事项"></a>3.元组中的注意事项</h2><ul>
+<li><p><strong>元组里面的直接数据修改会报错</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tuple1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>)</span><br><span class="line">tuple1[<span class="number">0</span>] = <span class="string">&#x27;aaa&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<img src="/2025/06/27/%E5%85%83%E7%BB%84/1.png" class="">
+
+<p><strong>但是如果元组里面有列表，修改列表里面的数据则是支持的</strong></p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tuple2 = (<span class="number">10</span>, <span class="number">20</span>, [<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>], <span class="number">50</span>, <span class="number">30</span>)</span><br><span class="line"><span class="built_in">print</span>(tuple2[<span class="number">2</span>])  <span class="comment"># 访问到列表</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：(10, 20, [&#x27;aaaaa&#x27;, &#x27;bb&#x27;, &#x27;cc&#x27;], 50, 30)</span></span><br><span class="line">tuple2[<span class="number">2</span>][<span class="number">0</span>] = <span class="string">&#x27;aaaaa&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(tuple2)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/27/%E5%88%97%E8%A1%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/tuxiang.jpg">
+      <meta itemprop="name" content="lj&&tmy">
+      <meta itemprop="description" content="总有人间一两风,填我十万八千梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/06/27/%E5%88%97%E8%A1%A8/" class="post-title-link" itemprop="url">列表</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-06-27 09:49:59 / 修改时间：11:26:15" itemprop="dateCreated datePublished" datetime="2025-06-27T09:49:59+08:00">2025-06-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><p><strong>列表由一系列按特定顺序排列的元素组成。列表可以一次性有序存储多个不同类型的数据。</strong></p>
+<p><strong>用方括号（[] ）来表示列表，并用逗号来分隔其中的元素.</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[数据<span class="number">1</span>, 数据<span class="number">2</span>, 数据<span class="number">3</span>, 数据<span class="number">4.</span>.....]</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-列表的常用操作"><a href="#1-列表的常用操作" class="headerlink" title="1.列表的常用操作"></a>1.列表的常用操作</h2><h3 id="1-1下标查找"><a href="#1-1下标查找" class="headerlink" title="1.1下标查找"></a>1.1下标查找</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">name_list = [<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Lily&#x27;</span>, <span class="string">&#x27;Rose&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(name_list[<span class="number">0</span>])  <span class="comment"># Tom</span></span><br><span class="line"><span class="built_in">print</span>(name_list[<span class="number">1</span>])  <span class="comment"># Lily</span></span><br><span class="line"><span class="built_in">print</span>(name_list[<span class="number">2</span>])  <span class="comment"># Rose</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-列表常用函数"><a href="#1-2-列表常用函数" class="headerlink" title="1.2 列表常用函数"></a>1.2 列表常用函数</h3><table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">index()</td>
+<td align="center">返回指定数据所在位置的下标 。</td>
+</tr>
+<tr>
+<td align="center">count()</td>
+<td align="center">统计指定数据在当前列表中出现的次数。</td>
+</tr>
+<tr>
+<td align="center">len()</td>
+<td align="center">访问列表长度，即列表中数据的个数。</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#列表序列.index(数据, 开始位置下标, 结束位置下标)</span></span><br><span class="line">name_list = [<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Lily&#x27;</span>, <span class="string">&#x27;Rose&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(name_list.index(<span class="string">&#x27;Lily&#x27;</span>, <span class="number">0</span>, <span class="number">2</span>))  <span class="comment">#输出：1</span></span><br><span class="line"></span><br><span class="line">name_list = [<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Lily&#x27;</span>, <span class="string">&#x27;Rose&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(name_list.count(<span class="string">&#x27;Lily&#x27;</span>))  <span class="comment">#输出：1</span></span><br><span class="line"></span><br><span class="line">name_list = [<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Lily&#x27;</span>, <span class="string">&#x27;Rose&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(name_list))  <span class="comment">#输出：3</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-判断是否存在"><a href="#1-3-判断是否存在" class="headerlink" title="1.3 判断是否存在"></a>1.3 判断是否存在</h3><p>in：判断指定数据在某个列表序列，如果在返回True，否则返回False。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">name_list = [<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Lily&#x27;</span>, <span class="string">&#x27;Rose&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Lily&#x27;</span> <span class="keyword">in</span> name_list)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：False</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Lilys&#x27;</span> <span class="keyword">in</span> name_list)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>not in：判断指定数据不在某个列表序列，如果不在返回True，否则返回False。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">name_list = [<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Lily&#x27;</span>, <span class="string">&#x27;Rose&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：False</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Lily&#x27;</span> <span class="keyword">not</span> <span class="keyword">in</span> name_list)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Lilys&#x27;</span> <span class="keyword">not</span> <span class="keyword">in</span> name_list)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-4-列表的增删改查"><a href="#1-4-列表的增删改查" class="headerlink" title="1.4 列表的增删改查"></a>1.4 列表的增删改查</h3><h4 id="1-4-1-增加"><a href="#1-4-1-增加" class="headerlink" title="1.4.1 增加"></a>1.4.1 增加</h4><ul>
+<li>append()：列表结尾追加数据。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#列表序列.append(数据)</span></span><br><span class="line"></span><br><span class="line">name_list = [<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Lily&#x27;</span>, <span class="string">&#x27;Rose&#x27;</span>]</span><br><span class="line"></span><br><span class="line">name_list.append(<span class="string">&#x27;xiaoming&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出：[&#x27;Tom&#x27;, &#x27;Lily&#x27;, &#x27;Rose&#x27;, &#x27;xiaoming&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(name_list)</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：如果append()追加的数据是一个序列，则追加整个序列到列表。</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">name_list = [<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Lily&#x27;</span>, <span class="string">&#x27;Rose&#x27;</span>]</span><br><span class="line"></span><br><span class="line">name_list.append([<span class="string">&#x27;xiaoming&#x27;</span>, <span class="string">&#x27;xiaohong&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：[&#x27;Tom&#x27;, &#x27;Lily&#x27;, &#x27;Rose&#x27;, [&#x27;xiaoming&#x27;, &#x27;xiaohong&#x27;]]</span></span><br><span class="line"><span class="built_in">print</span>(name_list)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>extend()：列表结尾追加数据，如果数据是一个序列，则将这个序列的数据逐一添加到列表。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">列表序列.extend(数据)</span><br><span class="line"></span><br><span class="line"><span class="comment">#单个数据</span></span><br><span class="line">name_list = [<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Lily&#x27;</span>, <span class="string">&#x27;Rose&#x27;</span>]</span><br><span class="line">name_list.extend(<span class="string">&#x27;xiaoming&#x27;</span>)</span><br><span class="line"><span class="comment"># 结果：[&#x27;Tom&#x27;, &#x27;Lily&#x27;, &#x27;Rose&#x27;, &#x27;x&#x27;, &#x27;i&#x27;, &#x27;a&#x27;, &#x27;o&#x27;, &#x27;m&#x27;, &#x27;i&#x27;, &#x27;n&#x27;, &#x27;g&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(name_list)</span><br><span class="line"></span><br><span class="line"><span class="comment">#多个数据</span></span><br><span class="line">name_list = [<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Lily&#x27;</span>, <span class="string">&#x27;Rose&#x27;</span>]</span><br><span class="line">name_list.extend([<span class="string">&#x27;xiaoming&#x27;</span>, <span class="string">&#x27;xiaohong&#x27;</span>])</span><br><span class="line"><span class="comment"># 结果：[&#x27;Tom&#x27;, &#x27;Lily&#x27;, &#x27;Rose&#x27;, &#x27;xiaoming&#x27;, &#x27;xiaohong&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(name_list)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>insert()：指定位置新增数据。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#列表序列.insert(位置下标, 数据)</span></span><br><span class="line"></span><br><span class="line">name_list = [<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Lily&#x27;</span>, <span class="string">&#x27;Rose&#x27;</span>]</span><br><span class="line"></span><br><span class="line">name_list.insert(<span class="number">1</span>, <span class="string">&#x27;xiaoming&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：[&#x27;Tom&#x27;, &#x27;xiaoming&#x27;, &#x27;Lily&#x27;, &#x27;Rose&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(name_list)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="1-4-2-删除"><a href="#1-4-2-删除" class="headerlink" title="1.4.2 删除"></a>1.4.2 删除</h4></li>
+<li><p>del</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">del</span> 目标</span><br><span class="line"><span class="comment"># del(目标)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#删除列表</span></span><br><span class="line">name_list = [<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Lily&#x27;</span>, <span class="string">&#x27;Rose&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：报错提示：name &#x27;name_list&#x27; is not defined</span></span><br><span class="line"><span class="keyword">del</span> name_list</span><br><span class="line"><span class="built_in">print</span>(name_list)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#删除指定数据</span></span><br><span class="line">name_list = [<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Lily&#x27;</span>, <span class="string">&#x27;Rose&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> name_list[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：[&#x27;Lily&#x27;, &#x27;Rose&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(name_list)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>pop()：删除指定下标的数据(默认为最后一个)，<strong>并返回该数据。</strong></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#列表序列.pop(下标)</span></span><br><span class="line"></span><br><span class="line">name_list = [<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Lily&#x27;</span>, <span class="string">&#x27;Rose&#x27;</span>]</span><br><span class="line"></span><br><span class="line">del_name = name_list.pop(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：Lily</span></span><br><span class="line"><span class="built_in">print</span>(del_name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：[&#x27;Tom&#x27;, &#x27;Rose&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(name_list)</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><p>remove()：移除列表中某个数据的第一个匹配项。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#列表序列.remove(数据)</span></span><br><span class="line"></span><br><span class="line">name_list = [<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Lily&#x27;</span>, <span class="string">&#x27;Rose&#x27;</span>]</span><br><span class="line"></span><br><span class="line">name_list.remove(<span class="string">&#x27;Rose&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：[&#x27;Tom&#x27;, &#x27;Lily&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(name_list)</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>clear()：清空列表</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name_list = [<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Lily&#x27;</span>, <span class="string">&#x27;Rose&#x27;</span>]</span><br><span class="line"></span><br><span class="line">name_list.clear()</span><br><span class="line"><span class="built_in">print</span>(name_list) <span class="comment"># 结果： []</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="1-4-3-修改"><a href="#1-4-3-修改" class="headerlink" title="1.4.3 修改"></a>1.4.3 修改</h4><ul>
+<li>修改指定下标数据</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">name_list = [<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Lily&#x27;</span>, <span class="string">&#x27;Rose&#x27;</span>]</span><br><span class="line"></span><br><span class="line">name_list[<span class="number">0</span>] = <span class="string">&#x27;aaa&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：[&#x27;aaa&#x27;, &#x27;Lily&#x27;, &#x27;Rose&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(name_list)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>逆置：reverse()</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">num_list = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">8</span>]</span><br><span class="line"></span><br><span class="line">num_list.reverse()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：[8, 6, 3, 2, 5, 1]</span></span><br><span class="line"><span class="built_in">print</span>(num_list)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>排序：sort()</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#列表序列.sort( key=None, reverse=False)</span></span><br><span class="line"></span><br><span class="line">num_list = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">8</span>]</span><br><span class="line"></span><br><span class="line">num_list.sort()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：[1, 2, 3, 5, 6, 8]</span></span><br><span class="line"><span class="built_in">print</span>(num_list)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：reverse表示排序规则，reverse &#x3D; True 降序， reverse &#x3D; False 升序（默认）</strong></p>
+<h3 id="1-5-复制"><a href="#1-5-复制" class="headerlink" title="1.5 复制"></a>1.5 复制</h3><ul>
+<li><p>copy()</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">name_list = [<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Lily&#x27;</span>, <span class="string">&#x27;Rose&#x27;</span>]</span><br><span class="line"></span><br><span class="line">name_li2 = name_list.copy()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：[&#x27;Tom&#x27;, &#x27;Lily&#x27;, &#x27;Rose&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(name_li2)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="2-列表的循环遍历"><a href="#2-列表的循环遍历" class="headerlink" title="2.列表的循环遍历"></a>2.列表的循环遍历</h2><p>需求：依次打印列表中的各个数据。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#while循环</span></span><br><span class="line"></span><br><span class="line">name_list = [<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Lily&#x27;</span>, <span class="string">&#x27;Rose&#x27;</span>]</span><br><span class="line"></span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> i &lt; <span class="built_in">len</span>(name_list):</span><br><span class="line">    <span class="built_in">print</span>(name_list[i])</span><br><span class="line">    i += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#for 循环</span></span><br><span class="line"></span><br><span class="line">name_list = [<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Lily&#x27;</span>, <span class="string">&#x27;Rose&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> name_list:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-列表嵌套"><a href="#3-列表嵌套" class="headerlink" title="3.列表嵌套"></a>3.列表嵌套</h2><p>所谓列表嵌套指的就是一个列表里面包含了其他的子列表</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">name_list = [[<span class="string">&#x27;小明&#x27;</span>, <span class="string">&#x27;小红&#x27;</span>, <span class="string">&#x27;小绿&#x27;</span>], [<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Lily&#x27;</span>, <span class="string">&#x27;Rose&#x27;</span>], [<span class="string">&#x27;张三&#x27;</span>, <span class="string">&#x27;李四&#x27;</span>, <span class="string">&#x27;王五&#x27;</span>]]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第一步：按下标查找到李四所在的列表</span></span><br><span class="line"><span class="built_in">print</span>(name_list[<span class="number">2</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二步：从李四所在的列表里面，再按下标找到数据李四</span></span><br><span class="line"><span class="built_in">print</span>(name_list[<span class="number">2</span>][<span class="number">1</span>])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#输出：[&#x27;张三&#x27;, &#x27;李四&#x27;, &#x27;王五&#x27;]</span></span><br><span class="line"><span class="comment">#输出：李四</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/26/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/tuxiang.jpg">
+      <meta itemprop="name" content="lj&&tmy">
+      <meta itemprop="description" content="总有人间一两风,填我十万八千梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/06/26/%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="post-title-link" itemprop="url">字符串</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-06-26 16:28:42 / 修改时间：17:38:17" itemprop="dateCreated datePublished" datetime="2025-06-26T16:28:42+08:00">2025-06-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>字符串 就是一系列字符。在Python中，用引号括起的都是字符串，其中的引号可以是单引号，也可以是双引号</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;This is a string.&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;This is also a string.&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="1-使用方法修改字符串大小写"><a href="#1-使用方法修改字符串大小写" class="headerlink" title="1.使用方法修改字符串大小写"></a>1.使用方法修改字符串大小写</h2><h3 id="1-1-title-方法"><a href="#1-1-title-方法" class="headerlink" title="1.1 title()方法"></a>1.1 title()方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;ada lovelace&quot;</span></span><br><span class="line"><span class="built_in">print</span>(name.title())</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ada Lovelace</span><br></pre></td></tr></table></figure>
+
+<p>title()方法会将字符串每个单词的首字母变为大写，其他字母变为小写</p>
+<h3 id="1-2-upper-方法和lower-方法"><a href="#1-2-upper-方法和lower-方法" class="headerlink" title="1.2 upper()方法和lower()方法"></a>1.2 upper()方法和lower()方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;ada lovelace&quot;</span></span><br><span class="line"><span class="built_in">print</span>(name.upper())</span><br><span class="line"><span class="built_in">print</span>(name.lower())</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ADA LOVELACE</span><br><span class="line">ada lovelace</span><br></pre></td></tr></table></figure>
+
+<p>upper()方法将字母全部变为大写，lower()方法将字母全变为小写</p>
+<h2 id="2-拼接字符串"><a href="#2-拼接字符串" class="headerlink" title="2.拼接字符串"></a>2.拼接字符串</h2><h3 id="2-1-方法"><a href="#2-1-方法" class="headerlink" title="2.1 +方法"></a>2.1 <code>+</code>方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">first_name = <span class="string">&quot;ada&quot;</span></span><br><span class="line">last_name = <span class="string">&quot;lovelace&quot;</span> </span><br><span class="line">full_name = first_name + <span class="string">&quot; &quot;</span> + last_name</span><br><span class="line"><span class="built_in">print</span>(full_name)</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ada lovelace</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：<code>+</code>不能拼接字符串和其他类型(可以使用数据类型转换)</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">age = <span class="number">18</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;年龄：&quot;</span> + age)  <span class="comment"># 会报错：TypeError</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-使用格式化（f-string）"><a href="#2-2-使用格式化（f-string）" class="headerlink" title="2.2 使用格式化（f-string）"></a>2.2 使用格式化（f-string）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;小明&quot;</span></span><br><span class="line">msg = <span class="string">f&quot;你好，<span class="subst">&#123;name&#125;</span>！&quot;</span></span><br><span class="line"><span class="built_in">print</span>(msg)  <span class="comment"># 输出：你好，小明！</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3使用join-方法（列表）"><a href="#2-3使用join-方法（列表）" class="headerlink" title="2.3使用join() 方法（列表）"></a>2.3使用join() 方法（列表）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">words = [<span class="string">&quot;Python&quot;</span>, <span class="string">&quot;很&quot;</span>, <span class="string">&quot;有趣&quot;</span>]</span><br><span class="line">sentence = <span class="string">&quot;&quot;</span>.join(words)</span><br><span class="line"><span class="built_in">print</span>(sentence)  <span class="comment"># 输出：Python很有趣</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-删除空白"><a href="#3-删除空白" class="headerlink" title="3.删除空白"></a>3.删除空白</h2><p>空白很重要，因为你经常需要比较两个字符串是否相同。</p>
+<p>Python能够找出字符串开头和末尾多余的空白。</p>
+<table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">rstrip()</td>
+<td align="center">剔除字符串末尾空白</td>
+</tr>
+<tr>
+<td align="center">lstrip()</td>
+<td align="center">剔除字符串开头空白</td>
+</tr>
+<tr>
+<td align="center">strip()</td>
+<td align="center">剔除字符串两端空白</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&quot;   hello world   &quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(s.rstrip())  <span class="comment"># 剔除末尾空白，输出：&quot;   hello world&quot;</span></span><br><span class="line"><span class="built_in">print</span>(s.lstrip())  <span class="comment"># 剔除开头空白，输出：&quot;hello world   &quot;</span></span><br><span class="line"><span class="built_in">print</span>(s.strip())   <span class="comment"># 剔除两端空白，输出：&quot;hello world&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/24/%E8%BE%93%E5%85%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/tuxiang.jpg">
+      <meta itemprop="name" content="lj&&tmy">
+      <meta itemprop="description" content="总有人间一两风,填我十万八千梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/06/24/%E8%BE%93%E5%85%A5/" class="post-title-link" itemprop="url">输入</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-06-24 10:14:36 / 修改时间：14:00:42" itemprop="dateCreated datePublished" datetime="2025-06-24T10:14:36+08:00">2025-06-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h1><h2 id="1-输入的语法"><a href="#1-输入的语法" class="headerlink" title="1.输入的语法"></a>1.输入的语法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">input</span>(<span class="string">&quot;提示信息：&quot;</span>)</span><br><span class="line"><span class="comment">#控制台会输出提示信息，然后再输入</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-输入语法的特点"><a href="#2-输入语法的特点" class="headerlink" title="2.输入语法的特点"></a>2.输入语法的特点</h2><ul>
+<li>当程序执行到<code>input</code>，等待用户输入，输入完成之后才继续向下执行。</li>
+<li>在Python中，<code>input</code>接收用户输入后，一般存储到变量，方便使用。</li>
+<li><strong>在Python中，<code>input</code>会把接收到的任意用户输入的数据都当做字符串处理。</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">password = <span class="built_in">input</span>(<span class="string">&#x27;请输入您的密码：&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;您输入的密码是<span class="subst">&#123;password&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="comment"># &lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(password))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<img src="/2025/06/24/%E8%BE%93%E5%85%A5/1.png" class="">
+
+<h2 id="3-数据类型转换"><a href="#3-数据类型转换" class="headerlink" title="3.数据类型转换"></a>3.数据类型转换</h2><p><code>input()</code> 得到的总是字符串类型，需要手动转换为其他类型</p>
+<h3 id="1-转换数据类型的函数"><a href="#1-转换数据类型的函数" class="headerlink" title="1.转换数据类型的函数"></a>1.转换数据类型的函数</h3><ol>
+<li><ul>
+<li><table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">int(x, [base])</td>
+<td align="center">将一个数或字符串转换为整数类型的函数。 <code>x</code>：要转换的对象，可以是数字或字符串。 <code>base</code>：进制，默认为 10。只有当 x 是字符串时才需要指定。</td>
+</tr>
+<tr>
+<td align="center">float(x)</td>
+<td align="center">将x转换为一个浮点数</td>
+</tr>
+<tr>
+<td align="center">complex(real,[imag])</td>
+<td align="center">于创建复数的内置函数。<code>real</code>：实部，可以是整数或浮点数 <code>imag</code>：虚部（可选），默认为 0。返回值是一个复数，格式为 <code>real + imag*j</code></td>
+</tr>
+<tr>
+<td align="center">str(x)</td>
+<td align="center">将对象 x 转换为字符串</td>
+</tr>
+<tr>
+<td align="center">repr(x)</td>
+<td align="center">将对象 x 转换为表达式字符串</td>
+</tr>
+<tr>
+<td align="center">eval(str)</td>
+<td align="center">用来计算在字符串中的有效Python表达式,并返回一个对象</td>
+</tr>
+<tr>
+<td align="center">tuple(s)</td>
+<td align="center">将序列 s 转换为一个元组</td>
+</tr>
+<tr>
+<td align="center">list(s)</td>
+<td align="center">将序列 s 转换为一个列表</td>
+</tr>
+<tr>
+<td align="center">chr(x)</td>
+<td align="center">将一个整数转换为一个Unicode字符</td>
+</tr>
+<tr>
+<td align="center">ord(x)</td>
+<td align="center">将一个字符转换为它的ASCII整数值</td>
+</tr>
+<tr>
+<td align="center">hex(x)</td>
+<td align="center">将一个整数转换为一个十六进制字符串</td>
+</tr>
+<tr>
+<td align="center">oct(x)</td>
+<td align="center">将一个整数转换为一个八进制字符串</td>
+</tr>
+<tr>
+<td align="center">bin(x)</td>
+<td align="center">将一个整数转换为一个二进制字符串</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># int(x, [base])</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(<span class="string">&quot;123&quot;</span>))           <span class="comment"># 123</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(<span class="string">&quot;1010&quot;</span>, <span class="number">2</span>))       <span class="comment"># 10（二进制转十进制）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># float(x)</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">float</span>(<span class="string">&quot;3.14&quot;</span>))        <span class="comment"># 3.14</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># complex(real, [imag])</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">complex</span>(<span class="number">2</span>, <span class="number">3</span>))        <span class="comment"># (2+3j)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># str(x)</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>(<span class="number">123</span>))             <span class="comment"># &#x27;123&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># repr(x)</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">repr</span>(<span class="number">3.14</span>))           <span class="comment"># &#x27;3.14&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># eval(str)</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">eval</span>(<span class="string">&quot;1 + 2 * 3&quot;</span>))    <span class="comment"># 7</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># tuple(s)</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">tuple</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]))     <span class="comment"># (1, 2, 3)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># list(s)</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>((<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>)))      <span class="comment"># [4, 5, 6]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># chr(x)</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">chr</span>(<span class="number">65</span>))              <span class="comment"># &#x27;A&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ord(x)</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">ord</span>(<span class="string">&#x27;A&#x27;</span>))             <span class="comment"># 65</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># hex(x)</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">hex</span>(<span class="number">255</span>))             <span class="comment"># &#x27;0xff&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># oct(x)</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">oct</span>(<span class="number">8</span>))               <span class="comment"># &#x27;0o10&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># bin(x)</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">bin</span>(<span class="number">7</span>))               <span class="comment"># &#x27;0b111&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/23/%E8%BE%93%E5%87%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/tuxiang.jpg">
+      <meta itemprop="name" content="lj&&tmy">
+      <meta itemprop="description" content="总有人间一两风,填我十万八千梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/06/23/%E8%BE%93%E5%87%BA/" class="post-title-link" itemprop="url">输出</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-06-23 17:12:46 / 修改时间：17:58:08" itemprop="dateCreated datePublished" datetime="2025-06-23T17:12:46+08:00">2025-06-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1><h2 id="1-print"><a href="#1-print" class="headerlink" title="1.print"></a>1.print</h2><p><strong>作用：程序输出内容给用户。</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"></span><br><span class="line">age = <span class="number">18</span></span><br><span class="line"><span class="built_in">print</span>(age)</span><br></pre></td></tr></table></figure>
+
+<img src="/2025/06/23/%E8%BE%93%E5%87%BA/1.png" class="">
+
+
+
+<h2 id="2-格式化输出"><a href="#2-格式化输出" class="headerlink" title="2.格式化输出"></a>2.格式化输出</h2><p><strong>格式化输出是指按照指定的格式，将变量或表达式的值插入到字符串中进行输出。这样可以让输出内容更美观、易读，并且可以动态地显示变量的值。</strong></p>
+<p>常用的格式化输出方式：<strong>f-string</strong>，<strong><code>format()</code> 方法</strong>，<strong>百分号 <code>%</code> 格式化</strong></p>
+<table>
+<thead>
+<tr>
+<th>格式符号</th>
+<th>转换</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%s</td>
+<td>字符串</td>
+</tr>
+<tr>
+<td>%d</td>
+<td>有符号的十进制整数</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>浮点数</td>
+</tr>
+<tr>
+<td>%c</td>
+<td>字符</td>
+</tr>
+<tr>
+<td>%u</td>
+<td>无符号十进制整数</td>
+</tr>
+<tr>
+<td>%o</td>
+<td>八进制整数</td>
+</tr>
+<tr>
+<td>%x</td>
+<td>十六进制整数（小写ox）</td>
+</tr>
+<tr>
+<td>%X</td>
+<td>十六进制整数（大写OX）</td>
+</tr>
+<tr>
+<td>%e</td>
+<td>科学计数法（小写’e’）</td>
+</tr>
+<tr>
+<td>%E</td>
+<td>科学计数法（大写’E’）</td>
+</tr>
+<tr>
+<td>%g</td>
+<td>%f和%e的简写</td>
+</tr>
+<tr>
+<td>%G</td>
+<td>%f和%E的简写</td>
+</tr>
+</tbody></table>
+<h3 id="（1）f-string（格式化字符串，推荐）"><a href="#（1）f-string（格式化字符串，推荐）" class="headerlink" title="（1）f-string（格式化字符串，推荐）"></a>（1）<code>f-string</code><strong>（格式化字符串，推荐）</strong></h3><p>通过在字符串前加 <code>f</code>，用 <code>&#123;&#125;</code> 包含变量或表达式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;小明&quot;</span></span><br><span class="line">score = <span class="number">95</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;name&#125;</span>的成绩是<span class="subst">&#123;score&#125;</span>分&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="（2）format-方法"><a href="#（2）format-方法" class="headerlink" title="（2）format() 方法"></a>（2）<strong><code>format()</code> 方法</strong></h3><p>用 <code>&#123;&#125;</code> 占位，后面用 <code>.format()</code> 填充：</p>
+<h4 id="1-按顺序填充"><a href="#1-按顺序填充" class="headerlink" title="1.按顺序填充"></a>1.按顺序填充</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&#123;&#125;的成绩是&#123;&#125;分&quot;</span>.<span class="built_in">format</span>(<span class="string">&quot;小明&quot;</span>, <span class="number">95</span>))</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-按指定位置填充"><a href="#2-按指定位置填充" class="headerlink" title="2.按指定位置填充"></a>2.按指定位置填充</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&#123;1&#125;的成绩是&#123;0&#125;分&quot;</span>.<span class="built_in">format</span>(<span class="number">95</span>, <span class="string">&quot;小明&quot;</span>))</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-按使用关键字参数"><a href="#3-按使用关键字参数" class="headerlink" title="3.按使用关键字参数"></a>3.按使用关键字参数</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&#123;name&#125;的成绩是&#123;score&#125;分&quot;</span>.<span class="built_in">format</span>(name=<span class="string">&quot;小明&quot;</span>, score=<span class="number">95</span>))</span><br></pre></td></tr></table></figure>
+
+<h3 id="（3）百分号-格式化"><a href="#（3）百分号-格式化" class="headerlink" title="（3）百分号 % 格式化"></a>（3）<strong>百分号 <code>%</code> 格式化</strong></h3><p>类似于c语言方式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;%s的成绩是%d分&quot;</span> % (name, score))</span><br></pre></td></tr></table></figure>
+
+<p><strong>字符串输出的本质其实就是拼接字符串，那么我们都用<code>%s</code>完全也是可以的。很多时候，我们不用区分整型、浮点型等，直接用<code>%s</code>输出就可以了。</strong></p>
+<h2 id="3-转义字符"><a href="#3-转义字符" class="headerlink" title="3.转义字符"></a>3.转义字符</h2><p>常见转义字符：</p>
+<table>
+<thead>
+<tr>
+<th align="center">转义字符</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">\n</td>
+<td align="center">换行</td>
+</tr>
+<tr>
+<td align="center">\t</td>
+<td align="center">制表符</td>
+</tr>
+<tr>
+<td align="center">\‘</td>
+<td align="center">单引号</td>
+</tr>
+<tr>
+<td align="center">\“</td>
+<td align="center">双引号</td>
+</tr>
+<tr>
+<td align="center">\r</td>
+<td align="center">回车</td>
+</tr>
+<tr>
+<td align="center">\b</td>
+<td align="center">退格</td>
+</tr>
+<tr>
+<td align="center">\\</td>
+<td align="center">反斜杠本身</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;小明说：\&quot;你好！\&quot;&quot;</span>)   <span class="comment"># 输出：小明说：&quot;你好！&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;第一行\n第二行&quot;</span>)      <span class="comment"># 输出两行</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;路径：C:\\Users\\小明&quot;</span>) <span class="comment"># 输出：路径：C:\Users\小明</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># print会默认换行输出</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;输出的内容&#x27;</span>, end=<span class="string">&quot;\n&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>在Python中，print()， 默认自带<code>end=&quot;\n&quot;</code>这个换行结束符，所以导致每两个<code>print</code>直接会换行展示，用户可以按需求更改结束符。</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 改变Python换行输出</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;内容&#x27;</span>, end=<span class="string">&quot; &quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;内容&#x27;</span>, end=<span class="string">&quot;···&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<img src="/2025/06/23/%E8%BE%93%E5%87%BA/2.png" class="">
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/20/%E5%8F%98%E9%87%8F%E4%B8%8E%E6%B3%A8%E9%87%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/tuxiang.jpg">
+      <meta itemprop="name" content="lj&&tmy">
+      <meta itemprop="description" content="总有人间一两风,填我十万八千梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/06/20/%E5%8F%98%E9%87%8F%E4%B8%8E%E6%B3%A8%E9%87%8A/" class="post-title-link" itemprop="url">变量与注释</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-06-20 11:41:02 / 修改时间：14:16:21" itemprop="dateCreated datePublished" datetime="2025-06-20T11:41:02+08:00">2025-06-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="一-注释"><a href="#一-注释" class="headerlink" title="一.注释"></a>一.注释</h2><p>注释分为<strong>单行注释</strong>和<strong>多行注释</strong></p>
+<ul>
+<li><p>单行注释</p>
+<p>只能注释一行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># 注释内容</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>多行注释</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">这是三引号注释</span><br><span class="line">同样可以换行</span><br><span class="line">&quot;&quot;&quot;</span><br></pre></td></tr></table></figure>
+
+<p>或者使用三个单引号</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">这也是三引号注释</span><br><span class="line">可以换行</span><br><span class="line">&#x27;&#x27;&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>使用三个单引号或者三个双引号进行注释</p>
+<p><strong>进行多行注释时，推荐使用连续的 <code>#</code>，因为三引号主要用于文档字符串。</strong></p>
+<p> 文档字符串（docstring）是Python中用于描述模块、类、函数或方法用途的字符串。它通常放在定义体的第一行，用三引号（<code>&#39;&#39;&#39;</code> 或 <code>&quot;&quot;&quot;</code>）括起来，可以跨多行。</p>
+<p>示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    这是一个用于计算两个数之和的函数。</span></span><br><span class="line"><span class="string">    参数:</span></span><br><span class="line"><span class="string">        a: 第一个数</span></span><br><span class="line"><span class="string">        b: 第二个数</span></span><br><span class="line"><span class="string">    返回:</span></span><br><span class="line"><span class="string">        两个数的和</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> a + b</span><br></pre></td></tr></table></figure>
+
+<p>你可以通过 <code>help(add)</code> 或 <code>add.__doc__</code> 查看文档字符串的内容。<br>文档字符串有助于代码的可读性和自动化文档生成。</p>
+<h2 id="二-变量"><a href="#二-变量" class="headerlink" title="二.变量"></a>二.变量</h2><p>在Python中，定义变量非常简单，直接使用变量名赋值即可，无需声明类型。</p>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">10</span>          <span class="comment"># 定义一个整数变量</span></span><br><span class="line">name = <span class="string">&quot;张三&quot;</span>   <span class="comment"># 定义一个字符串变量</span></span><br><span class="line">pi = <span class="number">3.14</span>       <span class="comment"># 定义一个浮点数变量</span></span><br><span class="line">is_ok = <span class="literal">True</span>    <span class="comment"># 定义一个布尔变量</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>变量名自定义，要满足标识符命名规则</strong></p>
+<h5 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h5><p>标识符命名规则是Python中定义各种名字的时候的统一规范，具体如下：</p>
+<ul>
+<li>由数字、字母、下划线组成</li>
+<li>不能数字开头</li>
+<li>不能使用内置关键字</li>
+<li>严格区分大小写</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/20/hexo%E7%B3%BB%E5%88%974/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/tuxiang.jpg">
+      <meta itemprop="name" content="lj&&tmy">
+      <meta itemprop="description" content="总有人间一两风,填我十万八千梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/06/20/hexo%E7%B3%BB%E5%88%974/" class="post-title-link" itemprop="url">hexo系列4</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-06-20 10:27:13" itemprop="dateCreated datePublished" datetime="2025-06-20T10:27:13+08:00">2025-06-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-06-23 16:48:41" itemprop="dateModified" datetime="2025-06-23T16:48:41+08:00">2025-06-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="配置文件详解"><a href="#配置文件详解" class="headerlink" title="配置文件详解"></a>配置文件详解</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"># Hexo Configuration</span><br><span class="line">## Docs: https://hexo.io/docs/configuration.html</span><br><span class="line">## Source: https://github.com/hexojs/hexo/</span><br><span class="line"></span><br><span class="line"># Site</span><br><span class="line">title: 博客</span><br><span class="line">subtitle: 天道酬勤,厚德载物</span><br><span class="line">description: 总有人间一两风,填我十万八千梦</span><br><span class="line">keywords:</span><br><span class="line">  -codeing</span><br><span class="line">  -life</span><br><span class="line">author: lj&amp;&amp;tmy</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone: &#x27;&#x27;</span><br><span class="line"></span><br><span class="line"># URL</span><br><span class="line">## Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span><br><span class="line">url: http://example.com</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line">permalink_defaults:</span><br><span class="line">pretty_urls:</span><br><span class="line">  trailing_index: true # Set to false to remove trailing &#x27;index.html&#x27; from permalinks</span><br><span class="line">  trailing_html: true # Set to false to remove trailing &#x27;.html&#x27; from permalinks</span><br><span class="line"></span><br><span class="line"># Directory</span><br><span class="line">source_dir: source</span><br><span class="line">public_dir: public</span><br><span class="line">tag_dir: tags</span><br><span class="line">archive_dir: archives</span><br><span class="line">category_dir: categories</span><br><span class="line">code_dir: downloads/code</span><br><span class="line">i18n_dir: :lang</span><br><span class="line">skip_render:</span><br><span class="line"></span><br><span class="line"># Writing</span><br><span class="line">new_post_name: :title.md # File name of new posts</span><br><span class="line">default_layout: post</span><br><span class="line">titlecase: false # Transform title into titlecase</span><br><span class="line">external_link:</span><br><span class="line">  enable: true # Open external links in new tab</span><br><span class="line">  field: site # Apply to the whole site</span><br><span class="line">  exclude: &#x27;&#x27;</span><br><span class="line">filename_case: 0</span><br><span class="line">render_drafts: false</span><br><span class="line">post_asset_folder: true</span><br><span class="line">relative_link: false</span><br><span class="line">future: true</span><br><span class="line">syntax_highlighter: highlight.js</span><br><span class="line">highlight:</span><br><span class="line">  line_number: true</span><br><span class="line">  auto_detect: false</span><br><span class="line">  tab_replace: &#x27;&#x27;</span><br><span class="line">  wrap: true</span><br><span class="line">  hljs: false</span><br><span class="line">prismjs:</span><br><span class="line">  preprocess: true</span><br><span class="line">  line_number: true</span><br><span class="line">  tab_replace: &#x27;&#x27;</span><br><span class="line"></span><br><span class="line"># Home page setting</span><br><span class="line"># path: Root path for your blogs index page. (default = &#x27;&#x27;)</span><br><span class="line"># per_page: Posts displayed per page. (0 = disable pagination)</span><br><span class="line"># order_by: Posts order. (Order by date descending by default)</span><br><span class="line">index_generator:</span><br><span class="line">  path: &#x27;&#x27;</span><br><span class="line">  per_page: 10</span><br><span class="line">  order_by: -date</span><br><span class="line"></span><br><span class="line"># Category &amp; Tag</span><br><span class="line">default_category: uncategorized</span><br><span class="line">category_map:</span><br><span class="line">tag_map:</span><br><span class="line"></span><br><span class="line"># Metadata elements</span><br><span class="line">## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta</span><br><span class="line">meta_generator: true</span><br><span class="line"></span><br><span class="line"># Date / Time format</span><br><span class="line">## Hexo uses Moment.js to parse and display date</span><br><span class="line">## You can customize the date format as defined in</span><br><span class="line">## http://momentjs.com/docs/#/displaying/format/</span><br><span class="line">date_format: YYYY-MM-DD</span><br><span class="line">time_format: HH:mm:ss</span><br><span class="line">## updated_option supports &#x27;mtime&#x27;, &#x27;date&#x27;, &#x27;empty&#x27;</span><br><span class="line">updated_option: &#x27;mtime&#x27;</span><br><span class="line"></span><br><span class="line"># Pagination</span><br><span class="line">## Set per_page to 0 to disable pagination</span><br><span class="line">per_page: 10</span><br><span class="line">pagination_dir: page</span><br><span class="line"></span><br><span class="line"># Include / Exclude file(s)</span><br><span class="line">## include:/exclude: options only apply to the &#x27;source/&#x27; folder</span><br><span class="line">include:</span><br><span class="line">exclude:</span><br><span class="line">ignore:</span><br><span class="line"></span><br><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: next</span><br><span class="line"></span><br><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/one-command-deployment</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:ljtmy/ljtmy.github.io.git</span><br><span class="line">  branch: main </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-site"><a href="#1-site" class="headerlink" title="1.site"></a>1.site</h3><p>网站的个性化描述</p>
+<table>
+<thead>
+<tr>
+<th align="center">setting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">title</td>
+<td align="center">网站标题</td>
+</tr>
+<tr>
+<td align="center">subtitle</td>
+<td align="center">网站副标题</td>
+</tr>
+<tr>
+<td align="center">description</td>
+<td align="center">网站描述</td>
+</tr>
+<tr>
+<td align="center">keywords</td>
+<td align="center">网站关键词</td>
+</tr>
+<tr>
+<td align="center">author</td>
+<td align="center">网站作者</td>
+</tr>
+<tr>
+<td align="center">language</td>
+<td align="center">网站使用的语言，默认是<code>en</code> ，中文网站填<code>zh-Hans</code></td>
+</tr>
+<tr>
+<td align="center">timezone</td>
+<td align="center">网站使用的时区，默认为 <code>计算机的预设置</code>，可以不填</td>
+</tr>
+</tbody></table>
+<h3 id="2-url"><a href="#2-url" class="headerlink" title="2.url"></a>2.url</h3><p>关于博客文章 URL 的设置，一般不用进行更改</p>
+<table>
+<thead>
+<tr>
+<th align="center">setting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">url</td>
+<td align="center">网站的网站</td>
+</tr>
+<tr>
+<td align="center">permalink</td>
+<td align="center">文章的链接格式 ，默认为 <code>:year/:month/:day/:title/</code></td>
+</tr>
+<tr>
+<td align="center">pretty_urls</td>
+<td align="center"><strong><code>trailing_index</code></strong>：设置为 <code>true</code>，表示在永久链接的末尾保留 <code>index.html</code>。如果设置为 <code>false</code>，则会移除 <code>index.html</code>，使 URL 更简洁。 <strong><code>trailing_html</code></strong>：设置为 <code>true</code>，表示在永久链接的末尾保留 <code>.html</code>。如果设置为 <code>false</code>，则会移除 <code>.html</code>，使 URL 更简洁。</td>
+</tr>
+</tbody></table>
+<h3 id="3-Directory"><a href="#3-Directory" class="headerlink" title="3.Directory"></a>3.Directory</h3><p>关于文件夹的设置，也是一般不用进行更改</p>
+<table>
+<thead>
+<tr>
+<th align="center">setting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">source_dir</td>
+<td align="center">资源文件夹 ，存放用户的资源文件，默认为 <code>source</code></td>
+</tr>
+<tr>
+<td align="center">public_dir</td>
+<td align="center">公用文件夹 ，存放生成的静态文件，默认为 <code>public</code></td>
+</tr>
+<tr>
+<td align="center">tag_dir</td>
+<td align="center">标签目录 ，默认为 <code>tags</code></td>
+</tr>
+<tr>
+<td align="center">archive_dir</td>
+<td align="center">档案目录 ，默认为 <code>archives</code></td>
+</tr>
+<tr>
+<td align="center">category_dir</td>
+<td align="center">分类目录 ，默认为 <code>categories</code></td>
+</tr>
+<tr>
+<td align="center">code_dir</td>
+<td align="center">代码目录 ，默认为 <code>downloads/code</code></td>
+</tr>
+<tr>
+<td align="center">i18n_dir</td>
+<td align="center">i18n目录 ，默认为 <code>:lang</code></td>
+</tr>
+<tr>
+<td align="center">skip_render</td>
+<td align="center">储存站长验证文件，跳过指定文件的渲染</td>
+</tr>
+</tbody></table>
+<h3 id="4-Writing"><a href="#4-Writing" class="headerlink" title="4.Writing"></a>4.Writing</h3><p>这里是比较常用的写作设置，可以根据自己的写作习惯随时进行调整</p>
+<table>
+<thead>
+<tr>
+<th align="center">setting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">new_post_name</td>
+<td align="center">新文章的文件名格式，默认为 <code>:title.md</code></td>
+</tr>
+<tr>
+<td align="center">default_layout</td>
+<td align="center">预设的布局模板，默认为 <code>post</code></td>
+</tr>
+<tr>
+<td align="center">titlecase</td>
+<td align="center">标题是否使用首字母大写 ，默认为 <code>false</code></td>
+</tr>
+<tr>
+<td align="center">external_link</td>
+<td align="center"><strong><code>enable</code></strong>：<code>true</code> ， 是否在新标签页中打开外部链接。设置为 <code>true</code> 可以提高用户体验，避免用户离开当前页面。   <strong><code>field</code></strong>：<code>site</code>，  应用范围。<code>site</code> 表示应用于整个站点。 <strong><code>exclude</code></strong>：<code>&#39;&#39;</code>，  排除的域名。如果某些外部链接不需要在新标签页中打开，可以在这里列出这些域名。</td>
+</tr>
+<tr>
+<td align="center">filename_case</td>
+<td align="center">将文件名转换为 <code>1</code> 小写 或 <code>2</code> 大写，默认为 <code>0</code></td>
+</tr>
+<tr>
+<td align="center">render_drafts</td>
+<td align="center">是否显示渲染草稿，默认为 <code>false</code></td>
+</tr>
+<tr>
+<td align="center">post_asset_folder</td>
+<td align="center">是否启用文章资源文件夹。设置为 <code>true</code> 表示每篇文章都会有一个对应的资源文件夹，方便管理文章中的图片、文件等资源。</td>
+</tr>
+<tr>
+<td align="center">relative_link</td>
+<td align="center">是否使用相对链接。设置为 <code>false</code> 表示不使用相对链接，链接将基于站点的根目录。</td>
+</tr>
+<tr>
+<td align="center">future</td>
+<td align="center">是否显示未来日期的文章。设置为 <code>true</code> 表示允许显示发布日期在未来的文章。</td>
+</tr>
+<tr>
+<td align="center">syntax_highlighter</td>
+<td align="center">代码高亮工具。<code>highlight.js</code> 是一个流行的代码高亮库，支持多种编程语言</td>
+</tr>
+<tr>
+<td align="center">highlight</td>
+<td align="center"><strong><code>line_number</code></strong>：<code>true</code>，是否显示代码行号。设置为 <code>true</code> 可以在代码块中显示行号，便于阅读和调试。 <strong><code>auto_detect</code></strong>：<code>false</code>  ，是否自动检测代码语言。设置为 <code>false</code> 表示不自动检测，需要手动指定代码语言。 <strong><code>tab_replace</code></strong>：<code>&#39;&#39;</code>  ，替换制表符的字符。默认为空，表示不进行替换。 <strong><code>wrap</code></strong>：<code>true</code>  ，是否对代码块进行包裹。设置为 <code>true</code> 可以使代码块在页面中更好地显示。 <strong><code>hljs</code></strong>：<code>false</code> ，是否使用 <code>highlight.js</code> 的高级功能。设置为 <code>false</code> 表示不使用。</td>
+</tr>
+<tr>
+<td align="center">prismjs</td>
+<td align="center"><strong><code>preprocess</code></strong>：<code>true</code>  ，是否预处理代码块。设置为 <code>true</code> 可以提高代码高亮的性能。 <strong><code>line_number</code></strong>：<code>true</code>  ，：是否显示代码行号。设置为 <code>true</code> 可以在代码块中显示行号。 <strong><code>tab_replace</code></strong>：<code>&#39;&#39;</code>  ，：替换制表符的字符。默认为空，表示不进行替换。</td>
+</tr>
+</tbody></table>
+<h3 id="5-Home-page-setting"><a href="#5-Home-page-setting" class="headerlink" title="5.Home page setting"></a>5.Home page setting</h3><p>首页设置，可以自己决定每页显示的文章数量和显示文章的顺序，<strong>index_generator——主页设置</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">setting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">path</td>
+<td align="center"><strong>默认值：</strong>‘’。首页的根路径。默认值为空字符串，表示首页路径为网站的根目录。如果您希望将首页放在一个特定的子目录中，可以在这里指定路径，例如 <code>home</code>，则首页的路径将是 <code>https://yourdomain.com/home</code>。</td>
+</tr>
+<tr>
+<td align="center">per_page</td>
+<td align="center"><strong>默认值：</strong><code>10</code>。每页显示的文章数量。设置为 <code>10</code> 表示每页显示 10 篇文章。如果您希望禁用分页，可以将此值设置为 <code>0</code>。</td>
+</tr>
+<tr>
+<td align="center">order_by</td>
+<td align="center"><strong>默认值</strong>：<code>-date</code> 。文章的排序方式。默认值为 <code>-date</code>，表示按日期降序排列（最新的文章在前）。如果您希望按日期升序排列（最旧的文章在前），可以将其设置为 <code>date</code>。您还可以使用其他字段进行排序，例如 <code>updated</code> 或 <code>title</code>。</td>
+</tr>
+</tbody></table>
+<h3 id="6-Category-Tag"><a href="#6-Category-Tag" class="headerlink" title="6.Category &amp; Tag"></a>6.Category &amp; Tag</h3><p>这里是关于分类和标签的配置</p>
+<table>
+<thead>
+<tr>
+<th align="center">setting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">default_category</td>
+<td align="center">预设分类，默认为 <code>uncategorized</code></td>
+</tr>
+<tr>
+<td align="center">category_map</td>
+<td align="center">分类别名</td>
+</tr>
+<tr>
+<td align="center">tag_map</td>
+<td align="center">标签别名</td>
+</tr>
+</tbody></table>
+<h3 id="7-meta-generator"><a href="#7-meta-generator" class="headerlink" title="7.meta_generator"></a>7.meta_generator</h3><p><code>meta_generator</code> 是一个用于控制是否在生成的 HTML 文件中包含 <code>&lt;meta&gt;</code> 元素的设置。</p>
+<table>
+<thead>
+<tr>
+<th align="center">seeting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">meta_generator</td>
+<td align="center"><strong>默认值：</strong><code>true</code> ，当设置为 <code>true</code> 时，Hexo 会在生成的 HTML 文件的 <code>&lt;head&gt;</code> 部分添加一个 <code>&lt;meta name=&quot;generator&quot; content=&quot;Hexo&quot;&gt;</code> 标签。这个标签表明网站是使用 Hexo 生成的。如果您希望隐藏这个信息，可以将其设置为 <code>false</code>。</td>
+</tr>
+</tbody></table>
+<h3 id="8-Date-Time-format"><a href="#8-Date-Time-format" class="headerlink" title="8.Date &#x2F; Time format"></a>8.Date &#x2F; Time format</h3><p>时间和日期的显示格式，一般没特殊要求的也不需要改</p>
+<table>
+<thead>
+<tr>
+<th align="center">setting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">date_format</td>
+<td align="center">日期格式，默认为 <code>YYYY-MM-DD</code></td>
+</tr>
+<tr>
+<td align="center">time_format</td>
+<td align="center">时间格式，默认为 <code>HH:mm:ss</code></td>
+</tr>
+</tbody></table>
+<h4 id="9-Pagination"><a href="#9-Pagination" class="headerlink" title="9.Pagination"></a>9.Pagination</h4><p>这里是分页设置，可以自己决定单个页面上显示的文章数量和分页目录</p>
+<table>
+<thead>
+<tr>
+<th align="center">setting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">per_page</td>
+<td align="center">单个页面上显示的文章数量，默认为 <code>10</code> ，用 <code>0</code> 表示禁用分页</td>
+</tr>
+<tr>
+<td align="center">pagination_dir</td>
+<td align="center">分页目录，默认为 <code>page</code></td>
+</tr>
+</tbody></table>
+<h3 id="10-Include-Exclude-file-s"><a href="#10-Include-Exclude-file-s" class="headerlink" title="10.Include &#x2F; Exclude file(s)"></a>10.Include &#x2F; Exclude file(s)</h3><p><code>include</code>、<code>exclude</code> 和 <code>ignore</code> 是用于控制哪些文件和文件夹应该被包含或排除在生成的静态文件之外的设置。</p>
+<table>
+<thead>
+<tr>
+<th align="center">setting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">include</td>
+<td align="center">指定哪些文件或文件夹应该被包含在生成的静态文件中。这通常用于包含一些默认情况下会被 Hexo 忽略的文件，例如隐藏文件（以 <code>.</code> 开头的文件）或特定的文件类型。<strong>默认值</strong>：空数组 <code>[]</code></td>
+</tr>
+<tr>
+<td align="center">exclude</td>
+<td align="center">指定哪些文件或文件夹应该被排除在生成的静态文件之外。这通常用于排除一些不需要生成的文件，例如临时文件、备份文件或特定的文件类型。<strong>默认值</strong>：空数组 <code>[]</code></td>
+</tr>
+<tr>
+<td align="center">ignore</td>
+<td align="center">指定哪些文件或文件夹应该被完全忽略，既不会被渲染也不会被复制到 <code>public/</code> 文件夹中。这通常用于排除一些不需要处理的文件，例如临时文件、配置文件等。<strong>默认值</strong>：空数组 <code>[]</code></td>
+</tr>
+</tbody></table>
+<h3 id="11Extensions"><a href="#11Extensions" class="headerlink" title="11Extensions"></a>11Extensions</h3><p>这里可以设置主题类型和插件</p>
+<table>
+<thead>
+<tr>
+<th align="center">setting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">theme</td>
+<td align="center">博客使用的主题，默认为 <code>landscape</code></td>
+</tr>
+</tbody></table>
+<h4 id="12-Deployment"><a href="#12-Deployment" class="headerlink" title="12.Deployment"></a>12.Deployment</h4><p>这里是关于网站部署的配置，常用的有部署类型和部署地址</p>
+<table>
+<thead>
+<tr>
+<th align="center">setting</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">type</td>
+<td align="center">网站部署类型</td>
+</tr>
+<tr>
+<td align="center">repo</td>
+<td align="center">网站部署地址</td>
+</tr>
+<tr>
+<td align="center">branch</td>
+<td align="center">目标分支的名称</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/20/hexo%E7%B3%BB%E5%88%973/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/tuxiang.jpg">
+      <meta itemprop="name" content="lj&&tmy">
+      <meta itemprop="description" content="总有人间一两风,填我十万八千梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/06/20/hexo%E7%B3%BB%E5%88%973/" class="post-title-link" itemprop="url">hexo系列3</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-06-20 09:13:10 / 修改时间：09:34:13" itemprop="dateCreated datePublished" datetime="2025-06-20T09:13:10+08:00">2025-06-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h2><h3 id="1-hexo-init"><a href="#1-hexo-init" class="headerlink" title="1.hexo init"></a>1.hexo init</h3><p><code>hexo init</code> 命令用于初始化本地文件夹为网站的根目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init [folder]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>folder</code> 可选参数，用以指定初始化目录的路径，若无指定则默认为当前目录</li>
+</ul>
+<h3 id="2-hexo-new"><a href="#2-hexo-new" class="headerlink" title="2.hexo new"></a>2.hexo new</h3><p><code>hexo new</code>命令用于新建文章，一般可简写为 <code>hexo n</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>layout</code> 可选参数，用以指定文章类型，若无指定则默认由配置文件中的 default_layout 选项决定</li>
+<li><code>title</code> 必填参数，用以指定文章标题，如果参数值中含有空格，则需要使用双引号包围</li>
+</ul>
+<h3 id="3-hexo-generate"><a href="#3-hexo-generate" class="headerlink" title="3.hexo generate"></a>3.hexo generate</h3><p><code>hexo generate</code>命令用于生成静态文件，一般可以简写为<code>hexo g</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-d</code> 选项，指定生成后部署，与 <code>hexo d -g</code> 等价</li>
+</ul>
+<h3 id="4-hexo-server"><a href="#4-hexo-server" class="headerlink" title="4.hexo server"></a>4.hexo server</h3><p><code>hexo server</code>命令用于启动本地服务器，一般可以简写为 <code>hexo s</code></p>
+<ul>
+<li><p><code>-p</code> 选项，指定服务器端口，默认为 4000</p>
+</li>
+<li><p><code>-i</code> 选项，指定服务器 IP 地址，默认为 0.0.0.0</p>
+</li>
+<li><p><code>-s</code> 选项，静态模式 ，仅提供 public 文件夹中的文件并禁用文件监视</p>
+</li>
+</ul>
+<p><strong>说明</strong> ：运行服务器前需要安装 hexo-server 插件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-server --save</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-hexo-deploy"><a href="#5-hexo-deploy" class="headerlink" title="5.hexo deploy"></a>5.hexo deploy</h3><p><code>hexo deploy</code>命令用于部署网站，一般可以简写为<code>hexo d</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-g</code> 选项，指定生成后部署，与 <code>hexo g -d</code> 等价</li>
+</ul>
+<h3 id="6-hexo-clean"><a href="#6-hexo-clean" class="headerlink" title="6.hexo clean"></a>6.hexo clean</h3><p><code>hexo clean</code> 命令用于清除缓存</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+
+<p><strong>网站显示异常时可尝试此操作</strong></p>
+<h3 id="7-Option"><a href="#7-Option" class="headerlink" title="7.Option"></a>7.Option</h3><h5 id="（1）hexo-–safe"><a href="#（1）hexo-–safe" class="headerlink" title="（1）hexo –safe"></a>（1）hexo –safe</h5><p><code>hexo --safe</code> 表示安全模式，用于禁用加载插件和脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo --safe</span><br></pre></td></tr></table></figure>
+
+<p><strong>安装新插件时遇到问题可尝试此操作</strong></p>
+<h5 id="（2）hexo-–debug"><a href="#（2）hexo-–debug" class="headerlink" title="（2）hexo –debug"></a>（2）hexo –debug</h5><p><code>hexo --debug</code> 表示调试模式，用于将消息详细记录到终端和 <code>debug.log</code> 文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo --debug</span><br></pre></td></tr></table></figure>
+
+<h5 id="（3）hexo-–silent"><a href="#（3）hexo-–silent" class="headerlink" title="（3）hexo –silent"></a>（3）hexo –silent</h5><p><code>hexo --silent</code> 表示静默模式，用于静默输出到终端</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo --silent</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="官网文档"><a href="#官网文档" class="headerlink" title="官网文档"></a><a target="_blank" rel="noopener" href="https://hexo.io/docs/commands">官网文档</a></h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/19/hexo%E7%B3%BB%E5%88%972/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -405,12 +1748,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span>
       </div>
       <div class="site-state-item site-state-tags">
